@@ -1,40 +1,24 @@
-\# Sysadmin Deployment Pipeline and Branch Strategy Lab
+# Sysadmin Deployment Pipeline and Branch Strategy Lab
 
-
-
-\## Project Summary
-
-
+## Project Summary
 
 This project demonstrates how a sysadmin can test a deployment pipeline and branch strategy in a controlled Windows PowerShell lab environment.
 
-
-
 The lab simulates how an application change moves through development, staging, and production using Git branches and PowerShell deployment scripts.
 
-
-
-\## Why This Project Matters
-
-
+## Why This Project Matters
 
 Sysadmins often support deployment infrastructure, release validation, environment readiness, service health checks, and rollback planning.
 
-
-
 This project shows the operational side of deployments, including how to confirm that changes move safely between environments before reaching production.
 
-
-
-\## Branch Strategy
-
-
+## Branch Strategy
 
 | Branch | Environment | Purpose |
 
 |---|---|---|
 
-| feature/\* | Feature work | Individual changes |
+| feature/* | Feature work | Individual changes |
 
 | develop | Dev | Internal testing |
 
@@ -42,69 +26,51 @@ This project shows the operational side of deployments, including how to confirm
 
 | master | Production | Production-ready release |
 
-
-
-\## Deployment Flow
-
-
+## Deployment Flow
 
 feature/update-version -> develop -> staging -> master
 
+## Lab Environment
 
+- Windows PowerShell
 
-\## Lab Environment
+- Git
 
+- Local folder-based deployment simulation
 
+## Project Structure
 
-\- Windows PowerShell
+- app/
 
-\- Git
+- index.html
 
-\- Local folder-based deployment simulation
+- scripts/
 
+- deploy-dev.ps1
 
+- deploy-staging.ps1
 
-\## Project Structure
+- deploy-prod.ps1
 
+- environments/
 
+- dev/
 
-\- app/
+- staging/
 
-&#x20; - index.html
+- prod/
 
-\- scripts/
+- reports/
 
-&#x20; - deploy-dev.ps1
+- deployment-test-report.md
 
-&#x20; - deploy-staging.ps1
+- .gitignore
 
-&#x20; - deploy-prod.ps1
+- README.md
 
-\- environments/
-
-&#x20; - dev/
-
-&#x20; - staging/
-
-&#x20; - prod/
-
-\- reports/
-
-&#x20; - deployment-test-report.md
-
-\- .gitignore
-
-\- README.md
-
-
-
-\## Deployment Scripts
-
-
+## Deployment Scripts
 
 The lab includes three PowerShell deployment scripts:
-
-
 
 | Script | Environment | Purpose |
 
@@ -116,69 +82,48 @@ The lab includes three PowerShell deployment scripts:
 
 | scripts/deploy-prod.ps1 | Production | Deploys the application to the prod folder |
 
-
-
 Each script copies the application file into the correct environment folder and performs a basic health check.
 
+## Tests Performed
 
+- Feature branch promotion
 
-\## Tests Performed
+- Dev deployment
 
+- Staging deployment
 
+- Production deployment
 
-\- Feature branch promotion
+- Rollback from a bad release
 
-\- Dev deployment
+- Basic health check validation
 
-\- Staging deployment
-
-\- Production deployment
-
-\- Rollback from a bad release
-
-\- Basic health check validation
-
-
-
-\## Rollback Test
-
-
+## Rollback Test
 
 A simulated bad release was created using version 2.0.0 - BAD RELEASE.
 
-
-
 The bad release was deployed only to the dev environment and then rolled back before reaching staging or production.
 
+## Sysadmin Skills Demonstrated
 
+- Branch strategy understanding
 
-\## Sysadmin Skills Demonstrated
+- Deployment pipeline testing
 
+- Windows PowerShell scripting
 
+- Environment separation
 
-\- Branch strategy understanding
+- Release validation
 
-\- Deployment pipeline testing
+- Health check verification
 
-\- Windows PowerShell scripting
+- Rollback testing
 
-\- Environment separation
+- Change control documentation
 
-\- Release validation
+- Operational troubleshooting
 
-\- Health check verification
-
-\- Rollback testing
-
-\- Change control documentation
-
-\- Operational troubleshooting
-
-
-
-\## Final Result
-
-
+## Final Result
 
 The deployment pipeline test was completed successfully. The lab demonstrated how a sysadmin can support safe release operations by validating branch flow, deployment scripts, environment separation, health checks, and rollback procedures.
-
